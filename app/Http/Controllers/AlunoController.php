@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Aluno;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AlunoController extends Controller
 {
@@ -14,7 +15,7 @@ class AlunoController extends Controller
      */
     public function index()
     {
-        
+        return DB::table('alunos')->get();
     }
 
     /**

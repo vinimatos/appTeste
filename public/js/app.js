@@ -2032,13 +2032,56 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
+  mounted: function mounted() {//console.log("Component mounted.");
+  },
+  props: {
+    alunos: Object
+  },
+  beforeMount: function beforeMount() {
+    this.obterAlunos();
   },
   methods: {
     novo: function novo() {
-      window.location = './novo';
+      window.location = "./novo";
+    },
+    obterAlunos: function obterAlunos() {
+      var _this = this;
+
+      axios.get("./alunos").then(function (_ref) {
+        var data = _ref.data;
+        _this.alunos = data;
+      });
     }
   }
 });
@@ -37855,9 +37898,48 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _vm._v(
-              "\n                    I'm an example component.\n                "
+            _c(
+              "table",
+              { staticClass: "table table-striped table-hover mb-0" },
+              [
+                _vm._m(1),
+                _vm._v(" "),
+                _vm._l(_vm.alunos, function(item) {
+                  return _c("tbody", { key: item.id }, [
+                    _c("tr", [
+                      _c("td", { staticClass: "text-center" }, [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(item.nome) +
+                            "\n                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "text-center" }, [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(item.cpf) +
+                            "\n                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "text-center" }, [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(item.cidade) +
+                            "\n                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(2, true)
+                    ])
+                  ])
+                })
+              ],
+              2
             )
           ])
         ])
@@ -37865,7 +37947,44 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticStyle: { "margin-left": "25%", "padding-top": "5%" } },
+      [_c("h3", [_vm._v("Lista dos alunos cadastrados")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { staticClass: "text-center" }, [_vm._v("Nome")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("CPF")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Cidade")]),
+        _vm._v(" "),
+        _c("th")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("button", { staticClass: "btn-sm btn-danger" }, [_vm._v("Excluir")]),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn-sm btn-primary" }, [_vm._v("Editar")])
+    ])
+  }
+]
 render._withStripped = true
 
 

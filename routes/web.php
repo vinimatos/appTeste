@@ -24,6 +24,7 @@ Route::get('/novo', function () {
 });
 
 Route::post('/aluno/save', 'AlunoController@store');
+Route::get('/alunos', 'AlunoController@index');
 
 Auth::routes();
 
