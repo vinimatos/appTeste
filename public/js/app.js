@@ -1949,15 +1949,58 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Component mounted.");
   },
+  data: function data() {
+    return {
+      nome: "",
+      cpf: "",
+      endereco: "",
+      cidade: ""
+    };
+  },
   methods: {
     salvar: function salvar() {
-      axios.post('./aluno/save').then(function (response) {
-        $('#success').html(response.data.message);
+      axios.post("./aluno/save", {
+        nome: this.nome,
+        cpf: this.cpf,
+        endereco: this.endereco,
+        cidade: this.cidade
+      }).then(function (response) {
+        $("#success").html(response.data.message);
+
+        if (response.status == 200) {
+          window.location = "./home";
+        }
       });
+    },
+    voltar: function voltar() {
+      window.location = "./home";
     }
   }
 });
@@ -37624,17 +37667,145 @@ var render = function() {
                 }
               },
               [
-                _vm._m(0),
+                _c("div", { staticClass: "form-row" }, [
+                  _c("div", { staticClass: "form-group col-md-8" }, [
+                    _c("label", { attrs: { for: "inputEmail4" } }, [
+                      _vm._v("Nome")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.nome,
+                          expression: "nome"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text", id: "nome" },
+                      domProps: { value: _vm.nome },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.nome = $event.target.value
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group col-md-4" }, [
+                    _c("label", { attrs: { for: "inputEmail4" } }, [
+                      _vm._v("CPF")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.cpf,
+                          expression: "cpf"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text", id: "cpf" },
+                      domProps: { value: _vm.cpf },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.cpf = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(1),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", { attrs: { for: "inputAddress" } }, [
+                    _vm._v("Endereco")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.endereco,
+                        expression: "endereco"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", id: "Endereco" },
+                    domProps: { value: _vm.endereco },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.endereco = $event.target.value
+                      }
+                    }
+                  })
+                ]),
                 _vm._v(" "),
-                _vm._m(2),
+                _c("div", { staticClass: "form-row" }, [
+                  _c("div", { staticClass: "form-group col-md-6" }, [
+                    _c("label", { attrs: { for: "inputCity" } }, [
+                      _vm._v("Cidade")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.cidade,
+                          expression: "cidade"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text", id: "cidade" },
+                      domProps: { value: _vm.cidade },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.cidade = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                ]),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                  [_vm._v("\n              Salvar\n            ")]
-                )
+                _c("div", { staticClass: "pull-right " }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-default",
+                      on: {
+                        click: function($event) {
+                          return _vm.voltar()
+                        }
+                      }
+                    },
+                    [_vm._v("\n                Voltar\n              ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "submit" }
+                    },
+                    [_vm._v("Salvar")]
+                  )
+                ])
               ]
             )
           ])
@@ -37643,60 +37814,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-row" }, [
-      _c("div", { staticClass: "form-group col-md-8" }, [
-        _c("label", { attrs: { for: "inputEmail4" } }, [_vm._v("Nome")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", id: "email" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group col-md-4" }, [
-        _c("label", { attrs: { for: "inputEmail4" } }, [_vm._v("CPF")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", id: "cpf" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", { attrs: { for: "inputAddress" } }, [_vm._v("Endereco")]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", id: "Endereco" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-row" }, [
-      _c("div", { staticClass: "form-group col-md-6" }, [
-        _c("label", { attrs: { for: "inputCity" } }, [_vm._v("City")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", id: "inputCity" }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Aluno;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
@@ -13,7 +14,7 @@ class AlunoController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -34,7 +35,12 @@ class AlunoController extends Controller
      */
     public function store(Request $request)
     {
-       print_r('teste chegou fdp');
+        $aluno = new Aluno();
+        $aluno->nome = $request->input('nome');
+        $aluno->cpf = $request->input('cpf');
+        $aluno->endereco = $request->input('endereco');
+        $aluno->cidade = $request->input('cidade');
+        $aluno->save();
     }
 
     /**
