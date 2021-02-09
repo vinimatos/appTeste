@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/', function () {
+    return view('auth.login');
 });
 
 
@@ -25,7 +25,8 @@ Route::get('/novo', function () {
 
 Route::post('/aluno/save', 'AlunoController@store');
 Route::get('/alunos', 'AlunoController@index');
-
+Route::get('/home', function () {
+    return view('home');
+});
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
