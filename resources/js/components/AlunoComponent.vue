@@ -10,48 +10,26 @@
               <div class="form-row">
                 <div class="form-group col-md-8">
                   <label for="inputEmail4">Nome</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    v-model="nome"
-                    id="nome"
-                  />
+                  <input type="text" class="form-control" v-model="nome" id="nome" />
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputEmail4">CPF</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    v-model="cpf"
-                    id="cpf"
-                  />
+                  <input type="text" class="form-control" v-model="cpf" id="cpf" />
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputAddress">Endereco</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  v-model="endereco"
-                  id="Endereco"
-                />
+                <input class="form-control" v-model="endereco" id="Endereco" />
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputCity">Cidade</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    v-model="cidade"
-                    id="cidade"
-                  />
+                  <input type="text" class="form-control" v-model="cidade" id="cidade" />
                 </div>
               </div>
-              <div class="pull-right ">
-                <button class="btn btn-default" @click="voltar()">
-                  Voltar
-                </button>
+              <div class="pull-right">
+                <button class="btn btn-default" @click="voltar()">Voltar</button>
                 <button type="submit" class="btn btn-primary">Salvar</button>
               </div>
             </form>

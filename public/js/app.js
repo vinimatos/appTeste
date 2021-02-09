@@ -1950,28 +1950,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Component mounted.");
@@ -37783,7 +37761,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { type: "text", id: "Endereco" },
+                    attrs: { id: "Endereco" },
                     domProps: { value: _vm.endereco },
                     on: {
                       input: function($event) {
@@ -37826,7 +37804,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "pull-right " }, [
+                _c("div", { staticClass: "pull-right" }, [
                   _c(
                     "button",
                     {
@@ -37837,7 +37815,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("\n                Voltar\n              ")]
+                    [_vm._v("Voltar")]
                   ),
                   _vm._v(" "),
                   _c(
