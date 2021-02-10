@@ -21,7 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('index-component', require('./components/IndexComponent.vue').default);
 Vue.component('aluno-component', require('./components/AlunoComponent.vue').default);
-
+Vue.component('edit-component', require('./components/EditAlunoComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -31,4 +31,9 @@ Vue.component('aluno-component', require('./components/AlunoComponent.vue').defa
 
 const app = new Vue({
     el: '#app',
+    data: {
+        nome: '',
+        cpf: '',
+        cidade: '',
+    },
 });

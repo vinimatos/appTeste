@@ -31,8 +31,15 @@
                     {{ item.cidade }}
                   </td>
                   <td>
-                    <button class="btn-sm btn-danger">Excluir</button>
-                     <button class="btn-sm btn-primary">Editar</button>
+                    <button class="btn-sm btn btn-danger">Excluir</button>
+                    <button
+                      class="btn-sm btn-primary"
+                      @click="setVal(item.id, item.nome, item.cpf, item.cidade, item.endereco)"
+                      data-toggle="modal"
+                      data-target="#myModal"
+                    >
+                      Editar
+                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -43,7 +50,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   mounted() {
@@ -63,6 +69,13 @@ export default {
       axios.get("./alunos").then(({ data }) => {
         this.alunos = data;
       });
+    },
+    setVal(val, val1, val2, val3, val4) {
+      $("#id").attr("value", val)
+      $("#nome").attr("value", val1);
+      $("#cpf").attr("value", val2);
+      $("#cidade").attr("value", val3);
+      $("#endereco").attr("value", val4);
     },
   },
 };

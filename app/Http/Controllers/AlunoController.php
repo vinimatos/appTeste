@@ -73,9 +73,16 @@ class AlunoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $id = $request->input('id');
+        $model = Aluno::find($id);
+        $model->nome = $request->input('nome');
+        $model->cpf = $request->input('cpf');
+        $model->endereco = $request->input('endereco');
+        $model->cidade = $request->input('cidade');
+       
+        $model->save();
     }
 
     /**
