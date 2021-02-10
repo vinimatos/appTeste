@@ -2124,6 +2124,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {//console.log("Component mounted.");
   },
@@ -2151,6 +2159,14 @@ __webpack_require__.r(__webpack_exports__);
       $("#cpf").attr("value", val2);
       $("#cidade").attr("value", val3);
       $("#endereco").attr("value", val4);
+    },
+    excluir: function excluir(id) {
+      if (confirm("Deseja realmente excluir?")) {
+        axios.get("./aluno/excluir/" + id).then(function (_ref2) {
+          var response = _ref2.response;
+          location.reload();
+        });
+      }
     }
   }
 });
@@ -38101,9 +38117,23 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        _c("button", { staticClass: "btn-sm btn btn-danger" }, [
-                          _vm._v("Excluir")
-                        ]),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn-sm btn btn-danger",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                return _vm.excluir(item.id)
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Excluir\n                  "
+                            )
+                          ]
+                        ),
                         _vm._v(" "),
                         _c(
                           "button",

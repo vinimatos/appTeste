@@ -25,6 +25,7 @@ Route::get('/novo', function () {
 
 Route::post('/aluno/save', 'AlunoController@store');
 Route::post('/aluno/update', 'AlunoController@update');
+Route::get('/aluno/excluir/{id}', 'AlunoController@destroy');
 Route::get('/alunos', 'AlunoController@index');
 Route::get('/home', function () {
     return view('home');

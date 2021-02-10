@@ -93,6 +93,7 @@ class AlunoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Aluno::find($id);
+        $model->delete();
     }
 }

@@ -31,10 +31,18 @@
                     {{ item.cidade }}
                   </td>
                   <td>
-                    <button class="btn-sm btn btn-danger">Excluir</button>
+                    <button
+                      type="button"
+                      class="btn-sm btn btn-danger"
+                      @click="excluir(item.id)"
+                    >
+                      Excluir
+                    </button>
                     <button
                       class="btn-sm btn-primary"
-                      @click="setVal(item.id, item.nome, item.cpf, item.cidade, item.endereco)"
+                      @click="
+                        setVal(item.id, item.nome, item.cpf, item.cidade, item.endereco)
+                      "
                       data-toggle="modal"
                       data-target="#myModal"
                     >
@@ -71,11 +79,18 @@ export default {
       });
     },
     setVal(val, val1, val2, val3, val4) {
-      $("#id").attr("value", val)
+      $("#id").attr("value", val);
       $("#nome").attr("value", val1);
       $("#cpf").attr("value", val2);
       $("#cidade").attr("value", val3);
       $("#endereco").attr("value", val4);
+    },
+    excluir(id) {
+      if (confirm("Deseja realmente excluir?")) {
+        axios.get("./aluno/excluir/" + id).then(({ response }) => {
+          location.reload();
+        });
+      }
     },
   },
 };
