@@ -9,7 +9,7 @@
           </div>
           <div class="form-group col-md-4">
             <label for="inputEmail4">CPF</label>
-            <input type="text" class="form-control"  id="cpf" />
+            <input type="text" class="form-control" maxlength="14" id="cpf" />
           </div>
         </div>
           <div class="form-group">
