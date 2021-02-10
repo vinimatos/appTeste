@@ -1,7 +1,18 @@
-Para execução do projeto:
+<h3>Para execução do projeto:</h3>
 
-1 - [Clone o projeto]
-2 - [npm install (para instalar as bibliotecas)]
-3 - [Configure seu banco de dados]
-4 - [php artisan migrate (para criar as tabelas para a utilização da aplicação)]
-5 - [Efetue o registro do usuário para poder ter acesso  (Opção: Registro).]
+<p>
+1 - Clone o projeto
+    </p>
+    <p>
+2 - npm install (para instalar as bibliotecas)
+     </p>
+    <p>
+3 - Configure seu banco de dados
+     </p>
+    <p>
+4 - php artisan migrate (para criar as tabelas para a utilização da aplicação)
+     </p>
+    <p>
+5 - Efetue o registro do usuário para poder ter acesso  (Opção: Registro).
+ </p>
+    <p>
