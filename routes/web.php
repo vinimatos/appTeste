@@ -25,8 +25,12 @@ Route::get('/novo', function () {
 
 Route::post('/aluno/save', 'AlunoController@store');
 Route::get('/alunos', 'AlunoController@index');
+Route::get('/aluno/edit/{id}', 'AlunoController@edit');
+Route::post('/aluno/update/{id}', 'AlunoController@update');
+
 Route::get('/home', function () {
     return view('home');
 });
+
 Auth::routes();
 
