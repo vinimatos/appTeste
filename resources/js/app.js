@@ -24,10 +24,7 @@ window.Vue = require('vue');
 
 Vue.component('index-component', require('./components/IndexComponent.vue').default);
 Vue.component('aluno-component', require('./components/AlunoComponent.vue').default);
-<<<<<<< HEAD
-=======
 Vue.component('edit-component', require('./components/EditAlunoComponent.vue').default);
->>>>>>> 7c7c480e4f6a5dbe051ccfb57e1a9312c1e6584d
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
