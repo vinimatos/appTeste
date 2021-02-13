@@ -2189,14 +2189,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
-  props: {
-    alunos: Object
+  data: function data() {
+    return {
+      ListaAlunos: this.alunos
+    };
   },
-  computed: {
-    listJson: function listJson() {
-      return JSON.parse(this.alunos);
-    }
-  },
+  props: ["alunos"],
   beforeMount: function beforeMount() {
     this.obterAlunos();
   },
@@ -2209,7 +2207,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("./alunos").then(function (_ref) {
         var data = _ref.data;
-        _this.alunos = data;
+        _this.ListaAlunos = data;
       });
     },
     setVal: function setVal(val, val1, val2, val3, val4) {
@@ -38676,7 +38674,7 @@ var render = function() {
               [
                 _vm._m(1),
                 _vm._v(" "),
-                _vm._l(_vm.alunos, function(item) {
+                _vm._l(_vm.ListaAlunos, function(item) {
                   return _c("tbody", { key: item.id }, [
                     _c("tr", [
                       _c("td", { staticClass: "text-center" }, [

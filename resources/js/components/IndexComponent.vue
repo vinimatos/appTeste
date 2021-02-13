@@ -21,7 +21,7 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody v-for="item in alunos" :key="item.id">
+                            <tbody v-for="item in ListaAlunos" :key="item.id">
                                 <tr>
                                     <td class="text-center">
                                         {{ item.nome }}
@@ -68,16 +68,13 @@
 </template>
 <script>
 export default {
-    mounted() {
-    },
-    props: {
-        alunos: Object,
-    },
-    computed: {
-        listJson: function(){
-            return JSON.parse(this.alunos);
+    mounted() {},
+    data() {
+        return {
+           ListaAlunos : this.alunos
         }
     },
+    props: ["alunos"],
     beforeMount() {
         this.obterAlunos();
     },
@@ -87,7 +84,7 @@ export default {
         },
         obterAlunos() {
             axios.get("./alunos").then(({ data }) => {
-                this.alunos = data;
+                this.ListaAlunos = data;
             });
         },
         setVal(val, val1, val2, val3, val4) {
