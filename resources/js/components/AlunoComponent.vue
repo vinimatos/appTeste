@@ -66,7 +66,6 @@ export default {
           cidade: this.cidade,
         })
         .then((response) => {
-          $("#success").html(response.data.message);
           if (response.status == 200) {
             window.location = "./home";
           }

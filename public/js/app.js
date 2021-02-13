@@ -2017,8 +2017,6 @@ __webpack_require__.r(__webpack_exports__);
         endereco: this.endereco,
         cidade: this.cidade
       }).then(function (response) {
-        $("#success").html(response.data.message);
-
         if (response.status == 200) {
           window.location = "./home";
         }
