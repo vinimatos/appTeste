@@ -14,7 +14,7 @@
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputEmail4">CPF</label>
-                  <input type="text" class="form-control" v-model="cpf" id="cpf" />
+                  <input type="text" class="form-control" maxlength="14"  v-mask="'###.###.###-##'" v-model="cpf" id="cpf"/>
                 </div>
               </div>
               <div class="form-group">
@@ -41,10 +41,12 @@
 </template>
 
 <script>
+
 export default {
   mounted() {
     console.log("Component mounted.");
   },
+   
   data: () => {
     return {
       nome: "",
@@ -53,6 +55,7 @@ export default {
       cidade: "",
     };
   },
+  
   methods: {
     salvar() {
       axios
